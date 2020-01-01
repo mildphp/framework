@@ -49,5 +49,10 @@
         "ext-apcu" : "Required to use APCU driver cache.",
         "ext-libxml" : "Required to use XML Loader in configuration file.",
         "ext-simplexml" : "Required to use XML Loader in configuration file."
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
