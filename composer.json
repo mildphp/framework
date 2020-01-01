@@ -42,5 +42,12 @@
         "phpunit/phpunit": "^8.2",
         "symfony/var-dumper": "^4.3",
         "mockery/mockery": "^1.2"
+    },
+    "suggest": {
+        "ext-curl": "Required to use CURL HTTP Client.",
+        "ext-apc"  : "Required to use APC driver cache.",
+        "ext-apcu" : "Required to use APCU driver cache.",
+        "ext-libxml" : "Required to use XML Loader in configuration file.",
+        "ext-simplexml" : "Required to use XML Loader in configuration file."
     }
 }
