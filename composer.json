@@ -1,0 +1,46 @@
+{
+    "name" : "mild/framework",
+    "description" : "The Mild php framework",
+    "license" : "MIT",
+    "authors" : [
+        {
+            "name" : "Mochammad Riyadh Ilham Akbar Pasya",
+            "email" : "ilhampasya920@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "files" : [
+            "src/Mild/Support/helpers.php"
+        ],
+        "psr-4": {
+            "Mild\\" : "src/Mild/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mild\\Tests\\" : "tests/"
+        }
+    },
+    "require": {
+        "ext-pdo"  : "*",
+        "ext-json" : "*",
+        "ext-fileinfo": "*",
+        "ext-openssl" : "*",
+        "ext-mbstring" : "*",
+        "psr/http-message": "^1.0",
+        "psr/container": "^1.0",
+        "filp/whoops": "^2.4",
+        "psr/event-dispatcher": "^1.0",
+        "psr/log": "^1.1",
+        "symfony/routing": "^4.3",
+        "psr/http-client": "^1.0",
+        "nesbot/carbon": "^2.27",
+        "symfony/yaml": "^5.0",
+        "ralouphie/getallheaders": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2",
+        "symfony/var-dumper": "^4.3",
+        "mockery/mockery": "^1.2"
+    }
+}
