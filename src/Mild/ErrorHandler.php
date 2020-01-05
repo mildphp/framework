@@ -89,7 +89,7 @@ class ErrorHandler implements ErrorHandlerInterface
 
                 $flash->add('__old', $validator->getData()->all());
 
-                $flash->add('__errors.validation', $validator->getMessage());
+                $flash->set('__errors.validation', $validator->getMessage());
                 return $response->withStatus(301)
                     ->withHeader('Location', [$request->getServerParam('HTTP_REFERER', $this->application->get('url'))]);
             }
