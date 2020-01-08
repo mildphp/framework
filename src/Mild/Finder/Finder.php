@@ -309,10 +309,12 @@ class Finder implements FinderInterface
     public function ignoreDotFiles($names = null)
     {
         if ($names) {
-            return $this->notContains($names);
+            $filter = new DotFileFilter($names); 
+        } else {
+            $filter = new DotFileFilter;
         }
 
-        return $this->filter(new DotFileFilter);
+        return $this->filter($filter);
     }
 
     /**
