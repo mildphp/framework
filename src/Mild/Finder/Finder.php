@@ -303,6 +303,19 @@ class Finder implements FinderInterface
     }
 
     /**
+     * @param null $names
+     * @return Finder
+     */
+    public function ignoreDotFiles($names = null)
+    {
+        if ($names) {
+            return $this->notNames($names);
+        }
+
+        return $this->filter(new DotFileFilter);
+    }
+
+    /**
      * @return Finder
      */
     public function readable()
@@ -449,7 +462,7 @@ class Finder implements FinderInterface
                 return false;
             }
         }
-        
+
         return true;
     }
 }

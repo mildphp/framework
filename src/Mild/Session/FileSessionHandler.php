@@ -55,7 +55,7 @@ class FileSessionHandler implements SessionHandlerInterface
      */
     public function gc($maxlifetime)
     {
-        foreach (Finder::instance($this->path)->files()->date(time() - $maxlifetime, '<=') as $file) {
+        foreach (Finder::instance($this->path)->ignoreDotFiles()->files()->date(time() - $maxlifetime, '<=') as $file) {
             @unlink($file->getRealPath());
         }
         return true;

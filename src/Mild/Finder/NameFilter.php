@@ -26,6 +26,6 @@ class NameFilter implements FilterInterface
      */
     public function accept(SplFileInfo $splFileInfo)
     {
-        return in_array(pathinfo($splFileInfo, PATHINFO_FILENAME), $this->names);
+        return in_array($splFileInfo->getFilename(), $this->names);
     }
 }

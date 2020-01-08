@@ -29,6 +29,6 @@ class ContainFilter implements FilterInterface
      */
     public function accept(SplFileInfo $splFileInfo)
     {
-        return Str::contains($splFileInfo->getBasename(), $this->needles);
+        return Str::contains($splFileInfo->getFilename(), $this->needles);
     }
 }
