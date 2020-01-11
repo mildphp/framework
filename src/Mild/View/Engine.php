@@ -183,7 +183,7 @@ class Engine implements EngineInterface
     protected function endSection()
     {
         if (!($key = array_pop($this->sectionStacks))) {
-            throw new ErrorException('Cannot end the section without start it first.')
+            throw new ErrorException('Cannot end the section without start it first.');
         }
 
         $this->sections[$key] .= ob_get_clean();
