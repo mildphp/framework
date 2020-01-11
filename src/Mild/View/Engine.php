@@ -3,6 +3,7 @@
 namespace Mild\View;
 
 use Throwable;
+use ErrorException;
 use InvalidArgumentException;
 use Mild\Support\Traits\Macroable;
 use Mild\Contract\View\EngineInterface;
@@ -177,10 +178,14 @@ class Engine implements EngineInterface
 
     /**
      * @return void
+     * @throws ErrorException
      */
     protected function endSection()
     {
-        $key = array_pop($this->sectionStacks);
+        if (!($key = array_pop($this->sectionStacks))) {
+            throw new ErrorException('Cannot end the section without start it first.')
+        }
+
         $this->sections[$key] .= ob_get_clean();
     }
 
