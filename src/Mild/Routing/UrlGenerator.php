@@ -63,7 +63,15 @@ class UrlGenerator
             ));
         }
 
-        $uri = $this->to(trim(preg_replace_callback('/\{(\w+?)\??}/', function ($matches) use ($parameters) {
+        $uri = $this->to(trim(preg_replace_callback('/\{(\w+?)\??}/', function ($matches) use (&$parameters) {
+
+            if (isset($parameters[$matches[1]])) {
+                $parameter = $parameters[$matches[1]];
+                unset($parameters[$matches[1]]);
+
+                return $parameter;
+            }
+
             if (empty($parameter = array_shift($parameters)) && strpos($matches[0], '?') === false) {
                 throw new InvalidArgumentException(sprintf(
                     'Parameters missing [%s]', $matches[1]
