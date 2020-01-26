@@ -32,7 +32,7 @@ class ValidationServiceProvider extends ServiceProvider
                 'mimes' => MimesRule::class,
                 'image' => ImageRule::class,
                 'unique' => UniqueRule::class,
-                'exists' => UniqueRule::class,
+                'exists' => ExistsRule::class,
                 'string' => StringRule::class,
                 'digits' => DigitsRule::class,
                 'nullable' => Nullable::class,
