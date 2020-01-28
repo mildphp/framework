@@ -32,8 +32,8 @@ class MailServiceProvider extends ServiceProvider
                         $config['drivers'][$config['driver']]['username'] ?? null,
                         $config['drivers'][$config['driver']]['password'] ?? null,
                         $config['drivers'][$config['driver']]['encryption'] ?? null,
-                        $config['drivers'][$config['driver']]['timeout'] ?? 15,
-                        $config['drivers'][$config['driver']]['auth'] ?? 'cram-md5'
+                        $config['drivers'][$config['driver']]['auth'] ?? null,
+                        $config['drivers'][$config['driver']]['timeout'] ?? 15
                     );
                     break;
                 case 'sendmail':
